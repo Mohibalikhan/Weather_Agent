@@ -25,7 +25,7 @@ config =RunConfig(
 
 print("Weather Expert by Mohib Ali Khan")
 
-cityname =input("Enter City name u want to Predict the Weather🌍☁️: ") 
+cityname =input("Enter City name u want to Predict the Weather🌍☁️ : ") 
 
 agent = Agent(
 
