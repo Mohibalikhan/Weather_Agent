@@ -1,11 +1,12 @@
-from agents import Agent, Runner, OpenAIChatCompletionsModel, AsyncOpenAI,RunConfig
+from agents import Agent, Runner, OpenAIChatCompletionsModel, AsyncOpenAI,RunConfig # import agents
 
-import os 
+import os # import operating system
 
 from dotenv import load_dotenv
 
 load_dotenv()
-gemini_api_key = os.getenv("GEMINI_API_KEY")
+gemini_api_key = os.getenv("GEMINI_API_KEY") # Gemini api key
+
 
 external_client = AsyncOpenAI(
     api_key=gemini_api_key,
@@ -24,10 +25,12 @@ config =RunConfig(
 
 print("Weather Expert by Mohib Ali Khan")
 
-cityname =input("Enter City name u want to Predict the Weather: ") 
+cityname =input("Enter City name u want to Predict the Weather🌍☁️: ") 
 
 agent = Agent(
+
     name="Weather Expert Agent",
+    # Train the model
     instructions="""
     Tum ek Weather Agent ho. Jab bhi me kisi city ka weather pochun, tum mujhe sirf ye cheezen batao:
     is taran dikhao
@@ -38,13 +41,10 @@ agent = Agent(
 """
 )
 
-
 result = Runner.run_sync(
     agent,
     input = cityname,
     run_config=config
     )
-
-
 
 print(result.final_output)
