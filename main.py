@@ -28,9 +28,16 @@ cityname =input("Enter City name u want to Predict the Weather: ")
 
 agent = Agent(
     name="Weather Expert Agent",
-    instructions="Tum ak Weather Agent ho tum mujhe temperature batao ge jis city ka weather pochon sirf mujhe temperature batao degree me bs", 
-    
+    instructions="""
+    Tum ek Weather Agent ho. Jab bhi me kisi city ka weather pochun, tum mujhe sirf ye cheezen batao:
+    is taran dikhao
+    1. Temperature: °C me
+    2. Weather condition: (sirf English me, jaise Sunny, Cloudy, Rainy waghera)
+    3. Location: Province name, Country name
+    Koi extra baat ya info mat dena — sirf ye teen cheezen.
+"""
 )
+
 
 result = Runner.run_sync(
     agent,
