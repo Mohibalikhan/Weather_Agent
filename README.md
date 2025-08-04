@@ -8,4 +8,4 @@
 - activate virtual enviroment in cmd
 
 # Step 04
-- uv add openai-agents python-dotenv"# Weather_Agent" 
+- uv add openai-agents python-dotenv
